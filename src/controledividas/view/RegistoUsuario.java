@@ -218,7 +218,7 @@ public class RegistoUsuario extends javax.swing.JFrame {
 
     private void btnRegistarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistarActionPerformed
         
-            Usuario usuario = new Usuario(contarUsuarios()+1, tfNome.getText(), tfApelido.getText(), tfEmail.getText(), tfTelefone.getText(), jPasswordField.getPassword().toString());
+            Usuario usuario = new Usuario(contarUsuarios()+1, tfNome.getText(), tfApelido.getText(), tfEmail.getText(), tfTelefone.getText(), String.valueOf(jPasswordField.getPassword()));
             UsuarioController.registar(usuario);
             new Login().setVisible(true);
             dispose();

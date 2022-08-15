@@ -63,7 +63,12 @@ public class Usuario implements Serializable{
         return senha;
     }
 
-
+//    public boolean autentica (Usuario u){
+//        if (this.email.equals(u.email) && this.senha.equals(u.senha)) {
+//            return true;
+//        }
+//        return false;
+//    }
     
     
 }

@@ -19,11 +19,10 @@ public class Main {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        if (UsuarioController.temUsuarios()) {
+        if (UsuarioController.temUsuarios()) 
             new Login().setVisible(true);
-        }else{
+        else
             new RegistoUsuario().setVisible(true);
-        }
     }
     
 }

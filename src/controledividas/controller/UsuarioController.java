@@ -79,12 +79,12 @@ public class UsuarioController {
     
     public static boolean autenticar(Usuario u) {
         List<Usuario> usuarios = listarUsuarios();
-        boolean autentica = usuarios.stream().anyMatch(p -> p.getEmail().equals(u.getEmail()));
+        boolean autentica = usuarios.stream().anyMatch(p -> (p.getEmail().equals(u.getEmail()) && p.getSenha().equals(u.getSenha())));
         return autentica;
     }
     
     public static void main(String[] args) {
-//        registar(new Usuario(29, "Maria", "kkk", "email@mr", "+55 34 00000 0000", "sss"));
+//        registar(new Usuario(29, "Maria", "kkk", "email@mr", "+55 34 00000 0000", "ssss"));
         System.out.println(listarUsuarios());
         System.out.println(contarUsuarios());
     }

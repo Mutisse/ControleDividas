@@ -143,8 +143,8 @@ public class Login extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnRegistarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistarActionPerformed
-        Usuario u = new Usuario(tfEmail.getText(), jPasswordField.getPassword().toString());
-        UsuarioController.autenticar(u);
+        Usuario u = new Usuario(tfEmail.getText(), String.valueOf(jPasswordField.getPassword()));
+        System.out.println(UsuarioController.autenticar(u));
     }//GEN-LAST:event_btnRegistarActionPerformed
 
     private void jPasswordFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordFieldActionPerformed
