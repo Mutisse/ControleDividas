@@ -33,7 +33,7 @@ public class Login extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        btnRegistar = new javax.swing.JButton();
+        btAutenticar = new javax.swing.JButton();
         tfEmail = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         jPasswordField = new javax.swing.JPasswordField();
@@ -53,12 +53,12 @@ public class Login extends javax.swing.JFrame {
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Email:");
 
-        btnRegistar.setBackground(new java.awt.Color(204, 255, 255));
-        btnRegistar.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        btnRegistar.setText("Entrar");
-        btnRegistar.addActionListener(new java.awt.event.ActionListener() {
+        btAutenticar.setBackground(new java.awt.Color(204, 255, 255));
+        btAutenticar.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        btAutenticar.setText("Entrar");
+        btAutenticar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnRegistarActionPerformed(evt);
+                btAutenticarActionPerformed(evt);
             }
         });
 
@@ -105,7 +105,7 @@ public class Login extends javax.swing.JFrame {
                         .addComponent(jLabel1))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(155, 155, 155)
-                        .addComponent(btnRegistar)))
+                        .addComponent(btAutenticar)))
                 .addContainerGap(79, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -122,7 +122,7 @@ public class Login extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPasswordField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(56, 56, 56)
-                .addComponent(btnRegistar)
+                .addComponent(btAutenticar)
                 .addContainerGap(76, Short.MAX_VALUE))
         );
 
@@ -142,10 +142,14 @@ public class Login extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnRegistarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistarActionPerformed
+    private void btAutenticarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btAutenticarActionPerformed
         Usuario u = new Usuario(tfEmail.getText(), String.valueOf(jPasswordField.getPassword()));
-        System.out.println(UsuarioController.autenticar(u));
-    }//GEN-LAST:event_btnRegistarActionPerformed
+//        System.out.println(UsuarioController.autenticar(u));
+        if (UsuarioController.autenticar(u)) {
+            new ControleDividas().setVisible(true);
+            dispose();
+        }
+    }//GEN-LAST:event_btAutenticarActionPerformed
 
     private void jPasswordFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPasswordFieldActionPerformed
         // TODO add your handling code here:
@@ -192,7 +196,7 @@ public class Login extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnRegistar;
+    private javax.swing.JButton btAutenticar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel5;
